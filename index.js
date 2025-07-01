@@ -31,18 +31,24 @@ function limpiarLista() {
   ul.innerHTML = "";
 }
 
+let solucion = [];
+
 // === CARGAR DESDE API ===
 async function cargarSudokuDesdeAPI() {
   try {
     const res = await fetch("https://sudoku-api.vercel.app/api/dosuku");
     const data = await res.json();
     const sudoku = data.newboard.grids[0].value;
+    const dificult = data.newboard.grids[0].difficulty;
+    solucion = data.newboard.grids[0].solution;
     poblarTablero(sudoku);
-    logEnLista("✅ Sudoku cargado desde la API", "wheat");
+    logEnLista(`✅ Sudoku cargado desde la API dificultad: ${dificult}`, "wheat");
   } catch (err) {
     logEnLista("❌ Error al obtener el Sudoku", "red");
   }
 }
+
+
 
 function poblarTablero(matriz) {
   document.querySelectorAll(".celda").forEach((input) => {

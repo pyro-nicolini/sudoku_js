@@ -29,38 +29,39 @@ body {
   grid-template-rows: repeat(9, 60px);
   gap: 10px;
   width: fit-content;
-  box-shadow: 5px 5px 15px rgb(0, 0, 0);
 }
 
 .celda {
+  box-shadow: 2px 2px 7px rgb(0, 0, 0);
   font-family: "VT323";
   text-align: center;
   font-size: 3rem;
-  color: wheat;
-  border: 2px solid #dcd36a7e;
-  background-color: rgba(250, 235, 215, 0.425);
+  color: rgb(255, 255, 255);
+  border: 1px solid #fffd70;
+  background-color: rgba(255, 255, 255, 0.199);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
+  border-radius: .2rem;
 }
 
 .celda[data-fila="0"],
 .celda[data-fila="3"],
 .celda[data-fila="6"] {
-  border-top: 3px solid black;
+  border-top: 2px solid rgb(255, 255, 255);
 }
 
 .celda[data-col="0"],
 .celda[data-col="3"],
 .celda[data-col="6"] {
-  border-left: 3px solid black;
+  border-left: 2px solid rgb(205, 186, 255);
 }
 
 .celda[data-fila="8"] {
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid rgb(119, 119, 119);
 }
 
 .celda[data-col="8"] {
-  border-right: 3px solid black;
+  border-right: 3px solid rgb(119, 119, 119);
 }
 
 #lista {
@@ -112,9 +113,9 @@ button {
   }
 
   #tablero {
-    grid-template-columns: repeat(9, 35px);
-    grid-template-rows: repeat(9, 35px);
-    gap: 4px;
+    grid-template-columns: repeat(9, 38px);
+    grid-template-rows: repeat(9, 38px);
+    gap: 7px;
     box-shadow: 3px 3px 10px rgb(0, 0, 0);
   }
 

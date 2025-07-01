@@ -19,7 +19,9 @@ body {
 
 #game {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  gap: 2rem;
   margin-bottom: 20px;
 }
 

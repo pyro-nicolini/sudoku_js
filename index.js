@@ -4,6 +4,7 @@ const game = document.getElementById("game");
 const tablero = document.createElement("div");
 tablero.id = "tablero";
 game.appendChild(tablero);
+game.insertBefore(tablero, game.firstChild);
 
 for (let fila = 0; fila < 9; fila++) {
   for (let col = 0; col < 9; col++) {

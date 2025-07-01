@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Tiny5&family=VT323&display=swap");
+
+body {
+  display: flex;
+  justify-content: center;
+      flex-direction: column;
+    align-items: center;
+
+  gap: 2rem;
+  font-family: sans-serif;
+  text-align: center;
+  padding: 20px;
+  background-color: #55b2e1;
+  background-attachment: fixed;
+  background-image: url("https://i.redd.it/4ec77oea73c41.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#game {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#tablero {
+  display: grid;
+  grid-template-columns: repeat(9, 80px);
+  grid-template-rows: repeat(9, 80px);
+  gap: 10px;
+  width: fit-content;
+  box-shadow: 5px 5px 15px rgb(0, 0, 0);
+}
+
+.celda {
+  font-family: "VT323";
+  text-align: center;
+  font-size: 3rem;
+  color: wheat;
+  border: 2px solid #dcd36a7e;
+  background-color: rgba(250, 235, 215, 0.425);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.celda[data-fila="0"],
+.celda[data-fila="3"],
+.celda[data-fila="6"] {
+  border-top: 3px solid black;
+}
+
+.celda[data-col="0"],
+.celda[data-col="3"],
+.celda[data-col="6"] {
+  border-left: 3px solid black;
+}
+
+.celda[data-fila="8"] {
+  border-bottom: 3px solid black;
+}
+
+.celda[data-col="8"] {
+  border-right: 3px solid black;
+}
+
+#lista {
+  width: 280px;
+  max-height: 720px;
+  overflow-y: auto;
+  padding: 0.3rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 15px;
+  border: 2px solid #fff3;
+  box-shadow: 0 0 10px #000a;
+  font-family: "VT323", monospace;
+  font-size: 1rem;
+  color: white;
+}
+
+#lista ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#lista li {
+  margin-bottom: 0.5rem;
+  padding: 4px 8px;
+  border-left: 4px solid wheat;
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+#lista li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+button {
+  padding: .5rem 1rem;
+  border-radius: 1rem;
+}
+
+/* 📱 Versión Mobile */
+@media (max-width: 600px) {
+  body {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 1rem;
+  }
+
+  #tablero {
+    grid-template-columns: repeat(9, 35px);
+    grid-template-rows: repeat(9, 35px);
+    gap: 4px;
+    box-shadow: 3px 3px 10px rgb(0, 0, 0);
+  }
+
+  .celda {
+    font-size: 1.5rem;
+  }
+
+  #lista {
+    width: 90%;
+    max-height: 300px;
+    font-size: 0.9rem;
+  }
+}
